@@ -196,16 +196,19 @@ int main()
   printf("Boardsize = %dx%d\n",WIDTH,HEIGHT);
   printf("Using %d transposition table entries of size %lu.\n", TRANSIZE, sizeof(hashentry));
 
-  for (;;) {
-    reset();
-    while ((c = getchar()) != EOF) {
-      if (c >= '1' && c <= '0'+WIDTH)
-        makemove(c - '1');
-      else if (c == '\n')
-        break;
-    }
-    if (c == EOF)
-      break;
+  //45461667
+  //13333111
+  //35333571
+
+  makemove('4' - '1');
+  makemove('5' - '1');
+  makemove('4' - '1');
+  makemove('6' - '1');
+  makemove('1' - '1');
+  makemove('6' - '1');
+  makemove('6' - '1');
+  makemove('7' - '1');
+  
     printf("\nSolving %d-ply position after ", nplies);
     printMoves();
     puts(" . . .");
@@ -215,10 +218,9 @@ int main()
     poscnt = posed;
     for (work=0; (poscnt>>=1) != 0; work++) ; //work = log of #positions stored 
     printf("score = %d (%c)  work = %d\n",
-      result, "#-<=>+"[result], work);
+        result, "#-<=>+"[result], work);
     printf("%llu pos / %llu msec = %.1f Kpos/sec\n",
-      nodes, msecs, (double)nodes/msecs);
+        nodes, msecs, (double)nodes/msecs);
     htstat();
-  }
-  return 0;
+return 0;
 }
