@@ -22,7 +22,7 @@
 #include "Game.c"
 
 #define LOCKSIZE 26
-#define TRANSIZE 4194301
+#define TRANSIZE 8306069
 // should be a prime no less than about 2^{SIZE1-LOCKSIZE}, e.g.
 // 4194301,8306069,8388593,15999961,33554393,67108859,134217689,268435399
 
